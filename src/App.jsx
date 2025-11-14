@@ -51,7 +51,11 @@ const App = () => {
   // Hook สำหรับดึงข้อมูลจาก Firestore แบบ Realtime
   useEffect(() => {
     // Query: ดึงข้อมูลทั้งหมด เรียงตาม Timestamp ล่าสุด (createdAt)
-    const logsQuery = query(worklogsCol, orderBy("createdAt", "desc")); 
+    const logsQuery = query(
+      worklogsCol, 
+      orderBy("date", "desc"),      // Secondary sort: Old documents (string-based)
+      orderBy("time", "desc")       // Tertiary sort: Old documents (string-based)
+    );
 
     const unsubscribe = onSnapshot(logsQuery, (snapshot) => {
       const logsData = snapshot.docs.map(doc => ({
