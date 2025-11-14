@@ -11,7 +11,9 @@ const getTodayDateFormatted = () => {
     const today = new Date();
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yy = String(today.getFullYear()).slice(-2);
+    const currentYearCE = today.getFullYear(); // เช่น 2025
+    const currentYearBE = currentYearCE + 543;  // แปลงเป็น พ.ศ. (2568)
+    const yy = String(currentYearBE).slice(-2); // เอาแค่สองหลักสุดท้าย (68)
     return `${dd}/${mm}/${yy}`;
 };
 
