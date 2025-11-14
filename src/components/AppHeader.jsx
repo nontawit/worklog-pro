@@ -11,11 +11,11 @@ const AppHeader = ({ onOpenModal }) => {
     <header className="bg-white shadow-md p-4 rounded-xl flex justify-between items-center mb-6">
       {/* ส่วนโลโก้และชื่อโปรแกรม */}
       <div className="flex items-center space-x-3">
-        {/* Placeholder สำหรับโลโก้ - สมมติว่ามีไฟล์โลโก้ชื่อ 'logo.png' ใน public/images */}
-        {/* เนื่องจากยังไม่มีรูปจริง เราจะใช้ไอคอนแทนไปก่อน */}
-        <div className="text-3xl text-indigo-600 font-extrabold">
-          <img src='./NTW_Logo.png' alt="WorkLog-Pro Logo" className="w-10 h-10 object-contain" />
-        </div>
+        <img 
+          src="/NTW_Logo.png" // <--- ชี้ไปที่ไฟล์ในโฟลเดอร์ public
+          alt="NTW_Logo" 
+          className="size-20 object-contain" 
+        />
         
         <div>
           <h1 className="text-xl font-bold text-gray-800">WorkLog-Pro</h1>
